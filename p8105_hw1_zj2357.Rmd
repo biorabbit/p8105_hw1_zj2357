@@ -5,8 +5,28 @@ date: "2022-09-19"
 output: github_document
 ---
 
-```{r problem_1}
+First of all, we should include  the libraries we are using and prepare the dataset.
+```{r init, message=FALSE}
+library(tidyverse)
+data("penguins", package = "palmerpenguins")
+penguins=na.omit(penguins)
+```
 
+The penguins dataset consists with `r length(penguins)` columns and `r length(penguins$species)` rows. The heading of the dataset is as follows.
+```{r, echo=FALSE}
+head(penguins)
+```
+
+The columns are _`r colnames(penguins)`_. Among  these columns, the mean flipper length is `r round(mean(penguins$flipper_length_mm),2)`.
+
+We then make a scatter plot between Bill Length and Bill Depth, finding that Bill Height positively correlates with Bill Depth, and the relationship varies between species.
+```{r problem_1, warning=FALSE}
+
+penguins_scatter = ggplot(penguins, aes(x=bill_length_mm, y = bill_depth_mm,color=species))+geom_point()+labs(x = "Bill Length(mm)", y = "Bill Depth(mm)")+ggtitle("Scatter plot of Bill Length and Bill Depth")
+
+penguins_scatter
+
+ggsave('plots/penguins_scatter.pdf',plot=penguins_scatter,width=5,height=3)
 
 ```
 
