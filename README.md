@@ -1,1 +1,1 @@
-# p8105_hw1_zj2357
+# Homework 1 for course P8105
