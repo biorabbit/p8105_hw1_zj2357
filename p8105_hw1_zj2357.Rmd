@@ -1,0 +1,17 @@
+---
+title: "p8105_hw1_zj2357"
+author: "Zekai Jin"
+date: "2022-09-19"
+output: github_document
+---
+
+```{r problem_1}
+
+
+```
+
+
+```{r problem_2}
+
+
+```
